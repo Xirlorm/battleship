@@ -1,0 +1,131 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+$radius: 8px;
+
+%flex-display {
+	display: flex;
+	justify-items: center;
+	align-items: center;
+}
+
+body {
+	@extend %flex-display;
+	flex-direction: column;
+	gap: 10px;
+}
+
+h1 {
+	font-weight: 600;
+	font-size: 2em;
+	font-style: italic;
+	padding: 9px 9px 6px;
+	color: #89c;
+	text-shadow: 3px 3px 3px #ddd;
+}
+
+.info-display {
+	border: 2px solid #89c;
+	border-radius: $radius;
+	padding: 0.5em 1em;
+	margin: 0.5em;
+	min-width: 20em;
+	text-align: center;
+}
+
+button {
+	color: white;
+	background: #89c;
+	padding: 9px 18px;
+	border-radius: $radius;
+	margin: 6px;
+	width: 6em;
+	text-transform: capitalize;
+	font-weight: 600;
+}
+
+button.dir {
+	width: 5.5em;
+	height: 5.5em;
+	border: 2px solid #89c;
+	background: transparent;
+	border-radius: 3em;
+	text-align: center;
+	padding: 0;
+	color: #89c;
+}
+
+.battlefield {
+	width: 340px;
+	height: 340px;
+	padding: 10px;
+	margin: 2px;
+	display: grid;
+	grid-template-columns: repeat(10, 32px);
+	grid-template-rows: repeat(10, 32px);
+	text-align: center;
+}
+
+.playground {
+	@extend %flex-display;
+	justify-content: space-evenly;
+	flex-flow: row wrap;
+	margin: 0;
+}
+
+.player1, .player2 {
+	@extend %flex-display;
+	flex-direction: column;
+	justify-items: center;
+	margin: 10px;
+	border-radius: $radius;
+}
+
+.player-name {
+	min-width: 11em;
+	border: 2px solid #000;
+	text-align: center;
+	padding: 0.5em;
+	border-radius: $radius;
+	font-weight: 600;
+}
+
+.hide {
+	display: none;
+}
+
+.battlefield .spot {
+	border: 1px solid grey;
+	margin: 1px;
+	border-radius: 6px;
+	box-shadow: 3px 3px 3px #ddd;
+	transition: border-radius .4s ease-in-out .1s,
+							background .4s ease-in-out .3s;
+}
+
+div.spot.ship {
+	background: grey;
+	border: none;
+	border-radius: 16px;
+}
+
+div.spot.hit {
+	background: tomato;
+	border: none;
+}
+
+div.spot.missed {
+	background: #89c;
+	border: none;
+}
+
+.winner-banner {
+	text-align: center;
+	margin: 2em;
+}
+
+.winner-banner .message {
+	font-size: 3em;
+	font-weight: 600;
+}

@@ -1,0 +1,8 @@
+# Dependencies
+/node_modules
+
+# Build
+/dist
+
+# Test coverage reports
+/coverage

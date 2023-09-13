@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="title" content="Battleship">
+		<meta name="description" content="Battleship game">
+		<meta name="author" content="Xirlorm">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Battleship</title>
+	</head>
+	<body class="bg-white font-sans">
+		<!-- Header -->
+		<header> <h1>Battleship</h1> </header>
+		<!-- Information display popup -->
+		<div class="info-display"></div>
+		<!-- Get player ship coordinates -->
+		<div class="ship-input">
+			<div class="battlefield"></div>
+		</div>
+		<!-- Game controls -->
+		<div class="controls">
+			<button class="reset">Reset</button>
+			<button class="dir" data-dir="ver">Vertical</button>
+			<button class="done">Done</button>
+		</div>
+		<!-- Game playground -->
+		<div class="playground hide">
+			<div class="player1">
+				<div class="player-name"></div>
+				<div class="battlefield"></div>
+			</div>
+			<div class="player2">
+				<div class="player-name"></div>
+				<div class="battlefield"></div>
+			</div>
+		</div>
+		<!-- Display winner popup -->
+		<div class="winner-banner hide">
+			<div class="message">You won!</div>
+			<button class="replay">Replay</button>
+		</div>
+	</body>
+</html>
