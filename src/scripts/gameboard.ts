@@ -28,9 +28,9 @@ export function getGameboard(size: number = 10): Gameboard {
 			let rowEnd = row, colEnd = col;
 
 			if (dir === 'ver') {
-				rowEnd += ship.length;
+				rowEnd += (ship.length - 1);
 			} else if (dir === 'hor') {
-				colEnd += ship.length;
+				colEnd += (ship.length - 1);
 			}
 
 			const rowInRange = (rowEnd >= 0) && (rowEnd < size);
@@ -39,6 +39,7 @@ export function getGameboard(size: number = 10): Gameboard {
 			if (!(rowInRange && colInRange)) {
 				return false;
 			}
+
 
 			for (let i = row; i <= rowEnd; i++) {
 				for (let j = col; j <= colEnd; j++) {
@@ -68,7 +69,7 @@ export function getGameboard(size: number = 10): Gameboard {
 
 			spot?.hit();
 
-			return 'hit' in spot;
+			return true;
 		},
 
 		allShipsSunk() {

@@ -67,7 +67,7 @@ for (let spot of shipInput) {
 					ui.showInfo('All set!');
 				}
 
-				ui.showShip(ship.length, dir, row, col);
+				ui.showShip(ship.length - 1, dir, row, col);
 			}
 		}
 	});

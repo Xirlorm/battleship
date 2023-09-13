@@ -1,11 +1,11 @@
 "use strict";
 
 export enum shipKind {
-	submarine = 0,
-	destroyer = 1,
-	cruiser = 2,
-	battleship = 3,
-	carrier = 4,
+	submarine = 1,
+	destroyer = 2,
+	cruiser = 3,
+	battleship = 4,
+	carrier = 5,
 };
 
 export const fleet = [
@@ -19,7 +19,6 @@ export const fleet = [
 ]
 
 export interface Ship {
-	type: string,
   hits: number;
   length: number;
   hit: () => void;
@@ -31,7 +30,6 @@ export interface Ship {
 // *********************************************
 export function getShip(length: number): Ship {
   return {
-		type: shipKind[length],
     hits: 0,
     length,
 

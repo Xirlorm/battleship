@@ -34,15 +34,15 @@ function play(player: Player, opponent: Computer | Player) {
 
 					if (hasHitShip) {
 						spot.classList.add('hit');
+
+						if (opponent.gameboard.allShipsSunk()) {
+							lib.winner = player;
+							playerTurn = player;
+							ui.showWinnerBanner(lib.winner.name);
+							ui.showInfo(`${lib.winner.name} won!`);
+						}
 					} else {
 						spot.classList.add('missed');
-					}
-
-					if (opponent.gameboard.allShipsSunk()) {
-						lib.winner = player;
-						playerTurn = player;
-						ui.showWinnerBanner(lib.winner.name);
-						ui.showInfo(`${lib.winner.name} won!`);
 					}
 
 					if (opponent.name === 'Computer') {
@@ -69,14 +69,14 @@ function computerPlay(computer: Computer, opponent: Player) {
 
 			if (hasHitShip) {
 				spot?.classList.add('hit');
+
+				if (opponent.gameboard.allShipsSunk()) {
+					lib.winner = computer;
+					ui.showWinnerBanner(lib.winner.name);
+					ui.showInfo(`${lib.winner.name} won!`);
+				}
 			} else {
 				spot?.classList.add('missed');
-			}
-
-			if (opponent.gameboard.allShipsSunk()) {
-				lib.winner = computer;
-				ui.showWinnerBanner(lib.winner.name);
-				ui.showInfo(`${lib.winner.name} won!`);
 			}
 
 			playerTurn = opponent;
