@@ -13,13 +13,10 @@ let lib: {
 // Player takes turn playing game
 // ************************************************************
 function play(player: Player, opponent: Computer | Player) {
-	if (playerTurn === undefined) {
-		playerTurn = player;
-	}
+	playerTurn = player;
+	const battlefield = document.querySelectorAll('.player2 .spot');
 
-	const opponentBattlefield = document.querySelectorAll('.player2 .spot');
-
-	for (let spot of opponentBattlefield) {
+	for (let spot of battlefield) {
 		spot.addEventListener('click', (e) => {
 			if (playerTurn === player && lib.winner === null) {
 				const spot = e.target as HTMLElement;
@@ -43,7 +40,9 @@ function play(player: Player, opponent: Computer | Player) {
 
 					if (opponent.gameboard.allShipsSunk()) {
 						lib.winner = player;
+						playerTurn = player;
 						ui.showWinnerBanner(lib.winner.name);
+						ui.showInfo(`${lib.winner.name} won!`);
 					}
 
 					if (opponent.name === 'Computer') {
@@ -77,6 +76,7 @@ function computerPlay(computer: Computer, opponent: Player) {
 			if (opponent.gameboard.allShipsSunk()) {
 				lib.winner = computer;
 				ui.showWinnerBanner(lib.winner.name);
+				ui.showInfo(`${lib.winner.name} won!`);
 			}
 
 			playerTurn = opponent;
@@ -88,5 +88,5 @@ function computerPlay(computer: Computer, opponent: Player) {
 
 
 // ################################
-  export default lib;           //#
+/* # */  export default lib;   // #
 // ################################

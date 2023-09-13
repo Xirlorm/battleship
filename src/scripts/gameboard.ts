@@ -42,7 +42,7 @@ export function getGameboard(size: number = 10): Gameboard {
 
 			for (let i = row; i <= rowEnd; i++) {
 				for (let j = col; j <= colEnd; j++) {
-					if (battlefield[row][col] != undefined) {
+					if (battlefield[i][j] !== undefined) {
 						return false;
 					}
 				}
@@ -60,13 +60,15 @@ export function getGameboard(size: number = 10): Gameboard {
 		},
 
 		receiveAttack(row: number, col: number) {
-			if (battlefield[row][col] === undefined) {
+			const spot = battlefield[row][col];
+
+			if (spot === undefined) {
 				return false;
 			}
 
-			battlefield[row][col]?.hit();
+			spot?.hit();
 
-			return true;
+			return 'hit' in spot;
 		},
 
 		allShipsSunk() {
@@ -76,7 +78,7 @@ export function getGameboard(size: number = 10): Gameboard {
 				}
 			}
 
-			return true
+			return true;
 		},
 	};
 };

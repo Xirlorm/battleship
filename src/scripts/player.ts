@@ -96,12 +96,13 @@ export function getComputer(): Computer {
 				let successful = false;
 
 				while (!successful) {
-					const row =  Math.round(Math.random() * boardSize);
-					const col =  Math.round(Math.random() * boardSize);
+					const row =  Math.floor(Math.random() * boardSize);
+					const col =  Math.floor(Math.random() * boardSize);
 					const dir = ['ver', 'hor'][Math.floor(Math.random() * 2)] as 'hor'|'ver';
 
 					successful = this.gameboard.placeShip(ship, row, col, dir);
 				}
+				alert(ship.length)
 			}
 		},
 	}

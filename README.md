@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a web implementat of the classic battlehip game.
+This project is a web implementation of the classic battlehip game.
 Players take a turn in attacking their opponent's naval warfare.
 This project is inclusive in [The Odin Project](https://theodinproject.com)
 javascript lessons.
