@@ -1,22 +1,22 @@
 "use strict";
 
 export enum shipKind {
-	submarine = 1,
-	destroyer = 2,
-	cruiser = 3,
-	battleship = 4,
-	carrier = 5,
-};
+  submarine = 1,
+  destroyer = 2,
+  cruiser = 3,
+  battleship = 4,
+  carrier = 5,
+}
 
 export const fleet = [
-	shipKind.submarine,
-	shipKind.submarine,
-	shipKind.destroyer,
-	shipKind.destroyer,
-	shipKind.cruiser,
-	shipKind.battleship,
-	shipKind.carrier,
-]
+  shipKind.submarine,
+  shipKind.submarine,
+  shipKind.destroyer,
+  shipKind.destroyer,
+  shipKind.cruiser,
+  shipKind.battleship,
+  shipKind.carrier,
+];
 
 export interface Ship {
   hits: number;
