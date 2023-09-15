@@ -2,7 +2,7 @@
 
 import { fleet, getShip, shipKind } from "./scripts/ship";
 import { getComputer, getPlayer } from "./scripts/player";
-import lib from "./scripts/lib";
+import logic from "./scripts/logic";
 import ui from "./scripts/ui";
 import "./scss/main.scss";
 
@@ -17,7 +17,7 @@ function reset() {
 	index = 0;
 	player = getPlayer('You');
 	computer = getComputer();
-	lib.winner = null;
+	logic.winner = null;
 	ui.showShipInput();
 	ui.hidePlayground();
 	ui.hideWinnerBanner();
@@ -107,7 +107,7 @@ doneBtn?.addEventListener('click', () => {
 		ui.hideControls();
 		ui.showInfo('Tap spot on computer board to destroy ships')
 		computer.placeShips();
-		lib.play(player, computer);
-		lib.winner = null;
+		logic.play(player, computer);
+		logic.winner = null;
 	}
 })

@@ -2,8 +2,11 @@
 
 import { Computer, Player } from "./player";
 import ui from "./ui";
+import explosion from '../assets/audio/explosion.mp3';
+import splash from '../assets/audio/splash.mp3';
 
 let playerTurn: Player|Computer;
+// let isPlaying = false;
 let lib: {
 	play: (player: Player, opponent: Computer|Player) => void;
 	winner: Player|Computer|null;
@@ -41,8 +44,10 @@ function play(player: Player, opponent: Computer | Player) {
 							ui.showWinnerBanner(lib.winner.name);
 							ui.showInfo(`${lib.winner.name} won!`);
 						}
+						playHitSfx();
 					} else {
 						spot.classList.add('missed');
+						playMissSfx();
 					}
 
 					if (opponent.name === 'Computer') {
@@ -75,13 +80,35 @@ function computerPlay(computer: Computer, opponent: Player) {
 					ui.showWinnerBanner(lib.winner.name);
 					ui.showInfo(`${lib.winner.name} won!`);
 				}
+
+				playHitSfx();
 			} else {
 				spot?.classList.add('missed');
+				playMissSfx();
 			}
 
 			playerTurn = opponent;
-		}, 1);
+		}, 2000);
 	}
+}
+
+// <source src="./assets/audio/explosion.ogg" type="audio/ogg">
+const hitSound = new Audio(explosion);
+// <source src="./assets/audio/splash.ogg" type="audio/ogg">
+const missedSound = new Audio(splash);
+
+function playHitSfx() {
+	missedSound.pause();
+	missedSound.currentTime = 0;
+	hitSound.currentTime = 0;
+	hitSound.play();
+}
+
+function playMissSfx() {
+	hitSound.pause();
+	hitSound.currentTime = 0;
+	missedSound.currentTime = 0;
+	missedSound.play();
 }
 
 
