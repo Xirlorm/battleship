@@ -12,20 +12,7 @@ javascript lessons.
 - __Interactive gameplay__: Engage in battles with your computer
 - __Grid setup__: Setup your own fleet
 - __Winning condition__: Declares winner when a player's fleet has completely sunk.
-
-## Technologies used
-
-1. HTML
-2. SCSS
-3. Typescript
-
-## Tools used
-
-- Webpack
-- Eslint
-- Prettier
-- Babel
-- Jest
+- __Sound Effects__
 
 ## Installation
 
@@ -41,11 +28,16 @@ javascript lessons.
     cd battlehip/
     ```
 
-3. Install dependencies, make sure `npm` is installed:
+3. Install dependencies, make sure `pnpm` is installed:
 
     ```
-    npm install
+    pnpm install
+    ```
+4. Build game:
+    
+    ```
+    pnpm build
     ```
 
-4. Open _'index.html'_ from the _'dist/'_ directory in browser
+5. Open _'index.html'_ from the _'dist/'_ directory in browser
 
