@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-$radius: 8px;
+$radius: 6px;
 
 %flex-display {
   display: flex;
@@ -14,6 +14,8 @@ body {
   @extend %flex-display;
   flex-direction: column;
   gap: 10px;
+	@apply bg-gray-800;
+	@apply text-slate-50;
 }
 
 h1 {
@@ -22,16 +24,16 @@ h1 {
   font-style: italic;
   padding: 9px 9px 6px;
   color: #89c;
-  text-shadow: 3px 3px 3px #ddd;
+  text-shadow: 3px 3px 3px #222;
 }
 
 .info-display {
-  border: 2px solid #89c;
   border-radius: $radius;
   padding: 0.5em 1em;
   margin: 0.5em;
   min-width: 20em;
   text-align: center;
+	@apply border-2 border-white;
 }
 
 button {
@@ -90,6 +92,7 @@ button.dir {
   padding: 0.5em;
   border-radius: $radius;
   font-weight: 600;
+	@apply border-gray-100;
 }
 
 .hide {
@@ -97,17 +100,18 @@ button.dir {
 }
 
 .battlefield .spot {
-  border: 1px solid grey;
+	@apply bg-gray-800;
+	@apply shadow-sm shadow-gray-600;
+  @apply border-2 border-gray-100;
   margin: 1px;
   border-radius: 6px;
-  box-shadow: 3px 3px 3px #ddd;
   transition:
     border-radius 0.4s ease-in-out 0.1s,
     background 0.4s ease-in-out 0.3s;
 }
 
 div.spot.ship {
-  background: grey;
+	@apply bg-gray-300;
   border: none;
   border-radius: 16px;
 }
