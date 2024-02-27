@@ -2,7 +2,7 @@
 
 ## Description
 
-[This](https://xirlorm.github.io/battleship/) project is a web implementation of the classic battlehip game.
+[This](https://xirlorm.github.io/battleship/) project is a web implementation of the classic battleship game.
 Players take a turn in attacking their opponent's naval warfare.
 This project is inclusive in [The Odin Project](https://theodinproject.com)
 javascript lessons. [Here](https://xirlorm.github.io/battleship/) is a preview.
